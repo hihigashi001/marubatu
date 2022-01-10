@@ -7,9 +7,9 @@ class Player:
     def write(self, masu_number):
         print(f'{self._teban}さんが、{masu_number}を選びました。')
         if (self._teban == self._player1):
-            self._teban = 'x'
+            self._teban = self._player2
         else:
-            self._teban = 'o'
+            self._teban = self._player1
 
-    def print_teban(self):
+    def get_teban(self):
         return self._teban
