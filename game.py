@@ -1,4 +1,3 @@
-import random
 from masu import Masu
 from player import Player
 
@@ -49,17 +48,11 @@ class Game:
             masu_id = self._win_logic2()
         if masu_id == None:
             masu_id = self._win_logic3()
-        for i in range(9):
-            range9 = str(i + 1)
-            if (str(masu_id) == range9):
-                if (self._masu.get(i) != range9):
-                    print(f'[ {masu_id} ]番は、すでに入力されています。別の場所を選択してください。')
-                else:
-                    self._masu.write(int(masu_id), self._player.get_teban())
-                    self._hantei()
-                    self._player.write(masu_id)
-                    self._masu.print()
-                    print(self._winner_message)
+        self._masu.write(int(masu_id), self._player.get_teban())
+        self._hantei()
+        self._player.write(masu_id)
+        self._masu.print()
+        print(self._winner_message)
 
     def _hantei(self):
         if (self._masu.end_check()):
