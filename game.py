@@ -8,12 +8,11 @@ class Game:
         self._player = Player()
 
     def game_start(self):
-        
+        self._masu.print()
         while (self._winner_message == ""):
             self._one_play()
             if (self._winner_message != ""):
                 break
-
 
     def _one_play(self):
         masu_id = input(f'{self._player.get_teban()} さん、マスを選んでください : ')
