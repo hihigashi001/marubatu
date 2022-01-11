@@ -13,3 +13,9 @@ class Player:
 
     def get_teban(self):
         return self._teban
+    
+    def is_cpu(self):
+        if (self._teban == self._player1):
+            return False
+        else:
+            return True
