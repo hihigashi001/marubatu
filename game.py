@@ -72,8 +72,7 @@ class Game:
     def _win_logic1(self):
         for win in win_patern:
             win_array = [self._masu.get(win[0]), self._masu.get(win[1]), self._masu.get(win[2])]
-            if (win_array.count(self._player._player2) == 2):
-                # このへんに追加
+            if (win_array.count(self._player._player2) == 2) and (win_array.count(self._player._player1) != 1):
                 for number in win_array:
                     if (number != self._player._player2):
                         return number
@@ -81,8 +80,7 @@ class Game:
     def _win_logic2(self):
         for win in win_patern:
             win_array = [self._masu.get(win[0]), self._masu.get(win[1]), self._masu.get(win[2])]
-            if (win_array.count(self._player._player1) == 2):
-                # このへんに追加
+            if (win_array.count(self._player._player1) == 2) and (win_array.count(self._player._player2) != 1):
                 for number in win_array:
                     if (number != self._player._player1):
                         return number
